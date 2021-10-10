@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Livewire\Dashboard;
+use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TasksController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TaskListsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+Route::inertia('/', 'Homepage')->name('homepage');
 
-Route::get('/dashboard', Dashboard::class)->name('dashboard')->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::match(['post', 'get'], '/dashboard', DashboardController::class)->name('dashboard');
+    Route::resource('tasks', TasksController::class)->only('store', 'update', 'destroy');
+    Route::resource('task-lists', TaskListsController::class)->only('store', 'update', 'destroy');
+});
+
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 require __DIR__.'/auth.php';

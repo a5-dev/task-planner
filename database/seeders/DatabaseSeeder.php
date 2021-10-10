@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Daniel Test',
-            'email' => 'daniel@a-5.dev',
-            'password' => Hash::make('test1234'),
+            'name' => 'Example user',
+            'email' => 'user@example.com',
+            'password' => Hash::make('password'),
         ]);
 
         DB::table('task_lists')->insert([
@@ -39,8 +39,15 @@ class DatabaseSeeder extends Seeder
 
         //general tasks
         DB::table('tasks')->insert([
-            'summary' => 'code larajam',
-            'to_do_date' => $today,
+            'summary' => 'code for larajam',
+            'to_do_date' => '2021-10-09',
+            'completed_at' => '2021-10-09',
+            'user_id' => 1,
+            'task_list_id' => null,
+        ]);
+        DB::table('tasks')->insert([
+            'summary' => 'code larajam again',
+            'to_do_date' => '2021-10-10',
             'completed_at' => null,
             'user_id' => 1,
             'task_list_id' => null,
@@ -94,7 +101,7 @@ class DatabaseSeeder extends Seeder
             'task_list_id' => 3,
         ]);
         DB::table('tasks')->insert([
-            'summary' => 'change spark plugs',
+            'summary' => 'change oil',
             'to_do_date' => null,
             'completed_at' => null,
             'user_id' => 1,

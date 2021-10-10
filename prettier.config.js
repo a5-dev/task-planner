@@ -5,5 +5,5 @@ module.exports = {
     singleQuote: true,
     vueIndentScriptAndStyle: true,
     proseWrap: 'never',
-    printWidth: 120,
+    printWidth: 160,
 };
