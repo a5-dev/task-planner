@@ -5,10 +5,11 @@ Task Planner OS is the community edition of Task Planner, and is free to use for
 ## Simple and powerful features including:
 
 - Tasks with due dates, or simple lists
-- Recurring Tasks
-- Drag and drop tasks between dates and lists
-- Email, SMS, and push notifications and reminders
-- Uses different colors for quick visual organization
+- **PRO Features**
+    - Recurring Tasks
+    - Drag and drop tasks between dates and lists
+    - Email, SMS, and push notifications and reminders
+    - Uses different colors for quick visual organization
 
 ## Requirements
 - PHP 8.0+
@@ -20,7 +21,7 @@ Task Planner OS is the community edition of Task Planner, and is free to use for
 
 2. From within the web folder:
     ``` bash
-    $ git clone git@bitbucket.org:daniela5/task-planner.git .
+    $ git clone https://github.com/a5-dev/task-planner.git .
     $ composer install
     $ cp .env.example .env
     $ php artisan key:generate
@@ -39,12 +40,12 @@ Task Planner OS is the community edition of Task Planner, and is free to use for
     $ nvm use
     ```
 
-    otherwise, install the node version noted in the `.nvmrc` file.
+    otherwise, install the node version noted in the `.nvmrc` file:
     ```
     $ cat .nvmrc
     ```
 
-    Verify your node version:
+    Verify your node version (14.18.0):
     ```
     node -v
     ```

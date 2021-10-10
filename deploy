@@ -1,7 +1,0 @@
-#!/bin/bash
-git pull &&
-composer install &&
-npm install &&
-php artisan migrate:fresh &&
-php artisan db:seed &&
-npm run watch
