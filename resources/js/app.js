@@ -3,6 +3,7 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+require('moment-immutable');
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
